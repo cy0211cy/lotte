@@ -214,6 +214,7 @@ header .btn_hamburger {
   height: 26px;
 }
 header .btn_hamburger span {
+  display: block; /* IE 10+ */
   width: 20px;
   height: 3px;
   background-color: #fff;

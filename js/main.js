@@ -12,8 +12,8 @@ $(function(){
         playing = true,
         pagerControl = $('.btn_control'),
         fixedHeader = $('header'),
-        accordion = $('header .all_menu_wrap nav > ul > li > a');
-
+        accordion = $('header .all_menu_wrap nav > ul > li > a'),
+        ua = window.navigator.userAgent;
     //네비게이션 메뉴 드롭다운
     navMenu.mouseenter(function(){
         $(this).children('ul').stop().slideDown();
@@ -124,4 +124,11 @@ $(function(){
             $('header .all_menu_wrap nav ul ul').hide();
         }
     });
+    
+
+    // ie 감지
+    if(ua.indexOf('MSIE ') > 0 || ua.indexOf('Trident/') > 0){ 
+        //윈도우 10까지는 MSIE, 윈도우 11부터는 Trident/ 사용
+        document.body.className="ie10";
+    }
 });
